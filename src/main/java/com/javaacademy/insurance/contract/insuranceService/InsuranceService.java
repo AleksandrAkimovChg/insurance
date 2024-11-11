@@ -28,8 +28,8 @@ public interface InsuranceService {
      * Если договора нет, выкидывается ошибка: такого договора не существует.
      */
 
-    default InsuranceContract payInsurance(String policyNumber) {
-        InsuranceContract contract = Archive.getAllContracts().get(policyNumber);
+    default InsuranceContract payInsurance(String contractNumber) {
+        InsuranceContract contract = Archive.getAllContracts().get(contractNumber);
         if (contract == null) {
             throw new IllegalArgumentException("Договора с таким номером не существует.");
         }

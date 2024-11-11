@@ -1,5 +1,10 @@
 package com.javaacademy.insurance.contract;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public enum StatusType {
-    PAID, UNPAID;
+    PAID("Оплачено"), UNPAID("Не оплачено");
+
+    final String name;
 }

@@ -29,8 +29,8 @@ public class InsuranceServiceJapanImpl implements InsuranceService {
 
     @Override
     public InsuranceContract getInsuranceOffer(BigDecimal coverage, String fullName, InsuranceType insuranceType) {
-        log.info("Начинаю формировать предложение для суммы покрытия {}, ФИО клиента: {}. Тип страховки: {}"
-                , coverage, fullName, insuranceType);
+        log.info("Начинаю формировать предложение для суммы покрытия {}. ФИО клиента: {}. Тип страховки: {}.",
+                coverage, fullName, insuranceType);
         InsuranceContract insuranceOffer = InsuranceService.super.getInsuranceOffer(coverage, fullName, insuranceType);
         BigDecimal contribution = insuranceOffer
                 .getContribution()

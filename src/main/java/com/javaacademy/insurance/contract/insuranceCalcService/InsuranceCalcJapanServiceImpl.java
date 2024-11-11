@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @Profile(value = "japan")
 @Component
 @Slf4j
 public class InsuranceCalcJapanServiceImpl implements InsuranceCalcService {
-
     @Value("${japan.rate.robbery}")
     private BigDecimal robberyRate;
     private static final BigDecimal ROBBERY_AWARD = BigDecimal.valueOf(10_000);
@@ -25,14 +25,20 @@ public class InsuranceCalcJapanServiceImpl implements InsuranceCalcService {
 
     @Override
     public BigDecimal calculateContribution(BigDecimal coverage, InsuranceType insuranceType) {
-        log.info("Начинаю расчет суммы страховой премии. Сумма покрытия: {}. Тип страховки {}"
-                , coverage, insuranceType);
+        log.info("Начинаю расчет суммы страховой премии. Сумма покрытия: {}. Тип страховки {}",
+                coverage, insuranceType);
         if (insuranceType == InsuranceType.ROBBERY_PROTECTION) {
-            BigDecimal price = coverage.multiply(robberyRate).add(ROBBERY_AWARD);
+            BigDecimal price = coverage
+                    .multiply(robberyRate)
+                    .add(ROBBERY_AWARD)
+                    .setScale(2, RoundingMode.HALF_UP);
             log.info("Расчет окончен. Сумма страховой премии: {}", price);
             return price;
         } else if (insuranceType == InsuranceType.MEDICAL) {
-            BigDecimal price = coverage.multiply(medicalRate).add(MEDICAL_AWARD);
+            BigDecimal price = coverage
+                    .multiply(medicalRate)
+                    .add(MEDICAL_AWARD)
+                    .setScale(2, RoundingMode.HALF_UP);
             log.info("Расчет окончен. Сумма страховой премии: {}", price);
             return price;
         } else {
