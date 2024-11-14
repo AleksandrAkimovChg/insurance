@@ -1,15 +1,18 @@
 package com.javaacademy.insurance.util;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Generator {
-    private static long count = 1;
+    private long count = 1;
+    @Value("${app.country}")
+    Country country;
 
     /**
      * Уникальный идентификатор договора страхования
      */
-    public static String generateUniqueIdContract() {
-        return System.currentTimeMillis() + "IS" + count++;
+    public String generateUniqueIdContract() {
+        return System.currentTimeMillis() + country.getIndex() + count++;
     }
-
-
-
 }

@@ -1,4 +1,4 @@
-package com.javaacademy.insurance.contract.exception;
+package com.javaacademy.insurance.exception;
 
 import lombok.experimental.StandardException;
 

@@ -1,0 +1,16 @@
+app:
+  currency: YEN
+  country: JAPAN
+  rate:
+    robbery: 0.01
+    medical: 0.015
+
+logging:
+  level:
+    root: WARN
+    com.javaacademy.insurance: TRACE
+
+spring:
+  output:
+  ansi:
+    enabled: DETECT

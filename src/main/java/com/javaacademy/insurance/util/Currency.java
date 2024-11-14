@@ -1,10 +1,10 @@
-package com.javaacademy.insurance.contract;
+package com.javaacademy.insurance.util;
 
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public enum Country {
-    JAPAN("Япония"), BRAZIL("Бразилия");
+public enum Currency {
+    YEN("йена"), REAL("реал");
 
     final String name;
 

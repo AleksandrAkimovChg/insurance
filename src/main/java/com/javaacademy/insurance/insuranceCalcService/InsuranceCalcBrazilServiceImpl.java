@@ -1,4 +1,4 @@
-package com.javaacademy.insurance.contract.insuranceCalcService;
+package com.javaacademy.insurance.insuranceCalcService;
 
 import com.javaacademy.insurance.contract.InsuranceType;
 import lombok.extern.slf4j.Slf4j;
@@ -13,12 +13,12 @@ import java.math.RoundingMode;
 @Component
 @Slf4j
 public class InsuranceCalcBrazilServiceImpl implements InsuranceCalcService {
+    private static final BigDecimal ROBBERY_AWARD = BigDecimal.valueOf(300);
+    private static final BigDecimal MEDICAL_AWARD = BigDecimal.valueOf(800);
     @Value("${brazil.rate.robbery}")
     private BigDecimal robberyRate;
-    private static final BigDecimal ROBBERY_AWARD = BigDecimal.valueOf(300);
     @Value("${brazil.rate.medical}")
     private BigDecimal medicalRate;
-    private static final BigDecimal MEDICAL_AWARD = BigDecimal.valueOf(800);
 
     @Override
     public BigDecimal calculateContribution(BigDecimal coverage, InsuranceType insuranceType) {

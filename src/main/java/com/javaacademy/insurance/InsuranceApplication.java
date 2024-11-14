@@ -2,7 +2,7 @@ package com.javaacademy.insurance;
 
 import com.javaacademy.insurance.contract.InsuranceContract;
 import com.javaacademy.insurance.contract.InsuranceType;
-import com.javaacademy.insurance.contract.insuranceService.InsuranceService;
+import com.javaacademy.insurance.insuranceService.InsuranceService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

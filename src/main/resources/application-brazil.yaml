@@ -1,0 +1,16 @@
+app:
+  currency: REAL
+  country: BRAZIL
+  rate:
+    robbery: 0.05
+    medical: 0.03
+
+logging:
+  level:
+    root: WARN
+    com.javaacademy.insurance: TRACE
+
+spring:
+  output:
+  ansi:
+    enabled: DETECT

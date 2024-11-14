@@ -1,4 +1,4 @@
-package com.javaacademy.insurance.contract.insuranceCalcService;
+package com.javaacademy.insurance.insuranceCalcService;
 
 import com.javaacademy.insurance.contract.InsuranceType;
 
