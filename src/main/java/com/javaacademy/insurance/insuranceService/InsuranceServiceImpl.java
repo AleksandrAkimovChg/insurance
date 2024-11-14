@@ -57,7 +57,7 @@ public abstract class InsuranceServiceImpl implements InsuranceService {
      * Если договора нет, выкидывается ошибка: такого договора не существует.
      */
     @Override
-    public InsuranceContract payInsurance(String contractNumber) {
+    public InsuranceContract payInsurance(String contractNumber) throws PolicyNumberHasNoMatch {
         InsuranceContract contract = archive.getAllContracts().get(contractNumber);
         if (contract == null) {
             throw new PolicyNumberHasNoMatch("Договора с таким номером не существует.");

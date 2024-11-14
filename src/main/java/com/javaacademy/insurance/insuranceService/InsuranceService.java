@@ -2,6 +2,7 @@ package com.javaacademy.insurance.insuranceService;
 
 import com.javaacademy.insurance.contract.InsuranceContract;
 import com.javaacademy.insurance.contract.InsuranceType;
+import com.javaacademy.insurance.exception.PolicyNumberHasNoMatch;
 
 import java.math.BigDecimal;
 
@@ -20,5 +21,5 @@ public interface InsuranceService {
      * На выход страховой договор с измененным статусом: оплаченный договор.
      * Если договора нет, выкидывается ошибка: такого договора не существует.
      */
-    InsuranceContract payInsurance(String contractNumber);
+    InsuranceContract payInsurance(String contractNumber) throws PolicyNumberHasNoMatch;
 }

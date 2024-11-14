@@ -7,8 +7,8 @@ app:
 
 logging:
   level:
-    root: WARN
-    com.javaacademy.insurance: TRACE
+    root: ERROR
+    com.javaacademy.insurance: INFO
 
 spring:
   output:

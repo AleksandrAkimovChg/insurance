@@ -15,9 +15,9 @@ import java.math.RoundingMode;
 public class InsuranceCalcBrazilServiceImpl implements InsuranceCalcService {
     private static final BigDecimal ROBBERY_AWARD = BigDecimal.valueOf(300);
     private static final BigDecimal MEDICAL_AWARD = BigDecimal.valueOf(800);
-    @Value("${brazil.rate.robbery}")
+    @Value("${app.rate.robbery}")
     private BigDecimal robberyRate;
-    @Value("${brazil.rate.medical}")
+    @Value("${app.rate.medical}")
     private BigDecimal medicalRate;
 
     @Override
